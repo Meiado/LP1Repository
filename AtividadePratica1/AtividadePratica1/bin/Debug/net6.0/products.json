@@ -1,0 +1,62 @@
+[
+  {
+    "id": "0d626841-75ce-4666-82a0-27ef894304bf",
+    "name": "Product 1",
+    "price": 10,
+    "stockQuantity": 10
+  },
+  {
+    "id": "dc103869-9639-42b9-a16b-b4ce6d57a914",
+    "name": "Product 2",
+    "price": 20,
+    "stockQuantity": 20
+  },
+  {
+    "id": "3897720c-1bef-448c-89a1-3fbb92a5608a",
+    "name": "Product 3",
+    "price": 30,
+    "stockQuantity": 30
+  },
+  {
+    "id": "53dd5000-c95f-4f59-b12c-affa6a023371",
+    "name": "Product 4",
+    "price": 40,
+    "stockQuantity": 40
+  },
+  {
+    "id": "57a3f8cc-c87e-4c4f-80bc-34c7d4085f40",
+    "name": "Product 5",
+    "price": 50,
+    "stockQuantity": 50
+  },
+  {
+    "id": "fec2ec86-2932-4272-91e5-b0e6fd3c70fa",
+    "name": "Product 6",
+    "price": 60,
+    "stockQuantity": 60
+  },
+  {
+    "id": "29640f35-7977-41d7-a791-bafa65aa3328",
+    "name": "Product 7",
+    "price": 70,
+    "stockQuantity": 70
+  },
+  {
+    "id": "cf93a29e-a098-4a7b-adec-5d41d6bf1e9a",
+    "name": "Product 8",
+    "price": 80,
+    "stockQuantity": 80
+  },
+  {
+    "id": "f6990d92-1657-47e0-b8ee-46f60ede9610",
+    "name": "Product 9",
+    "price": 90,
+    "stockQuantity": 90
+  },
+  {
+    "id": "30770f43-2dfe-4a69-b591-24e6ba1919c2",
+    "name": "Product 10",
+    "price": 100,
+    "stockQuantity": 100
+  }
+]

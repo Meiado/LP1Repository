@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gabri\\Documents\\Unoeste\\LP1Repository\\IntroAPI2\\IntroAPI2\\IntroAPI2.csproj",
-      "projectName": "IntroAPI2",
-      "projectPath": "C:\\Users\\gabri\\Documents\\Unoeste\\LP1Repository\\IntroAPI2\\IntroAPI2\\IntroAPI2.csproj",
+      "projectUniqueName": "C:\\Users\\gabri\\Documents\\Unoeste\\LP 1\\AtividadePratica1\\AtividadePratica1\\AtividadePratica1.csproj",
+      "projectName": "AtividadePratica1",
+      "projectPath": "C:\\Users\\gabri\\Documents\\Unoeste\\LP 1\\AtividadePratica1\\AtividadePratica1\\AtividadePratica1.csproj",
       "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gabri\\Documents\\Unoeste\\LP1Repository\\IntroAPI2\\IntroAPI2\\obj\\",
+      "outputPath": "C:\\Users\\gabri\\Documents\\Unoeste\\LP 1\\AtividadePratica1\\AtividadePratica1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gabri\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -7,5 +7,6 @@ namespace IntroAPI2.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
+        
     }
 }
