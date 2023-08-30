@@ -30,19 +30,6 @@ app.MapGet("/weatherforecast", () =>
     return forecast;
 });
 
-string productsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "products.json");
-List<ProductGetViewModel> products = new List<ProductGetViewModel>();
-for(int i=1;i<=10;i++){
-    products.Add(new ProductGetViewModel($"Product {i}", (double)i*10, i*10));
-}
-var options = new JsonSerializerOptions
-{
-                    WriteIndented = true,
-                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-};
-var json = System.Text.Json.JsonSerializer.Serialize(products, options);
-System.IO.File.WriteAllText(productsPath, json);
-
 app.MapControllers();
 
 app.Run();

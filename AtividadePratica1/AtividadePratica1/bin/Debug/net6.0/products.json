@@ -19,9 +19,9 @@
   },
   {
     "id": "53dd5000-c95f-4f59-b12c-affa6a023371",
-    "name": "Product 4",
-    "price": 40,
-    "stockQuantity": 40
+    "name": "Edited Product",
+    "price": 100,
+    "stockQuantity": 0
   },
   {
     "id": "57a3f8cc-c87e-4c4f-80bc-34c7d4085f40",
@@ -48,15 +48,15 @@
     "stockQuantity": 80
   },
   {
-    "id": "f6990d92-1657-47e0-b8ee-46f60ede9610",
-    "name": "Product 9",
-    "price": 90,
-    "stockQuantity": 90
+    "id": "30770f43-2dfe-4a69-b591-24e6ba1919c2",
+    "name": "Edited Product",
+    "price": 100,
+    "stockQuantity": 0
   },
   {
-    "id": "30770f43-2dfe-4a69-b591-24e6ba1919c2",
-    "name": "Product 10",
+    "id": "0a040e29-40c9-4bd5-912d-91ebea6bda7e",
+    "name": "Product 11",
     "price": 100,
-    "stockQuantity": 100
+    "stockQuantity": 10
   }
 ]

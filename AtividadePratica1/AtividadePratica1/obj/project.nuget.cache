@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "xPT+Iki9ufTGGxii93Jm5fNZykG02Mp0xlLgblqiYHX5OCx1SHM2zqe7qdkmlPk62Mzrt5uFEdBpmUdLPw0X/Q==",
+  "dgSpecHash": "PuTl8xHZHzIu1D5mdqNsd4VQRUK7M4mExqS8UyiuDwcfiKrPA+TwwThZUQcAu9CVajcszNXtzecO8hJJVITJ0g==",
   "success": true,
-  "projectFilePath": "c:\\Users\\gabri\\Documents\\Unoeste\\LP 1\\AtividadePratica1\\AtividadePratica1\\AtividadePratica1.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "d:\\Documentos\\Unoeste\\6º Sem\\LP1Repository\\AtividadePratica1\\AtividadePratica1\\AtividadePratica1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gabri\\.nuget\\packages\\microsoft.netcore.app.host.win-x86\\6.0.21\\microsoft.netcore.app.host.win-x86.6.0.21.nupkg.sha512"
+  ],
   "logs": []
 }
