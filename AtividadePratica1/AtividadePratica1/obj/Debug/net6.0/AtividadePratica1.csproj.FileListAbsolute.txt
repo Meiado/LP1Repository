@@ -49,3 +49,29 @@ D:\Documentos\Unoeste\6º Sem\LP1Repository\AtividadePratica1\AtividadePratica1\
 D:\Documentos\Unoeste\6º Sem\LP1Repository\AtividadePratica1\AtividadePratica1\obj\Debug\net6.0\AtividadePratica1.pdb
 D:\Documentos\Unoeste\6º Sem\LP1Repository\AtividadePratica1\AtividadePratica1\obj\Debug\net6.0\AtividadePratica1.genruntimeconfig.cache
 D:\Documentos\Unoeste\6º Sem\LP1Repository\AtividadePratica1\AtividadePratica1\obj\Debug\net6.0\ref\AtividadePratica1.dll
+C:\Users\gabri\Documents\Unoeste\LP1Repository\AtividadePratica1\AtividadePratica1\obj\Debug\net6.0\AtividadePratica1.csproj.AssemblyReference.cache
+C:\Users\gabri\Documents\Unoeste\LP1Repository\AtividadePratica1\AtividadePratica1\obj\Debug\net6.0\AtividadePratica1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabri\Documents\Unoeste\LP1Repository\AtividadePratica1\AtividadePratica1\obj\Debug\net6.0\AtividadePratica1.AssemblyInfoInputs.cache
+C:\Users\gabri\Documents\Unoeste\LP1Repository\AtividadePratica1\AtividadePratica1\obj\Debug\net6.0\AtividadePratica1.AssemblyInfo.cs
+C:\Users\gabri\Documents\Unoeste\LP1Repository\AtividadePratica1\AtividadePratica1\obj\Debug\net6.0\AtividadePratica1.csproj.CoreCompileInputs.cache
+C:\Users\gabri\Documents\Unoeste\LP1Repository\AtividadePratica1\AtividadePratica1\obj\Debug\net6.0\AtividadePratica1.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\gabri\Documents\Unoeste\LP1Repository\AtividadePratica1\AtividadePratica1\obj\Debug\net6.0\AtividadePratica1.dll
+C:\Users\gabri\Documents\Unoeste\LP1Repository\AtividadePratica1\AtividadePratica1\obj\Debug\net6.0\refint\AtividadePratica1.dll
+C:\Users\gabri\Documents\Unoeste\LP1Repository\AtividadePratica1\AtividadePratica1\obj\Debug\net6.0\AtividadePratica1.pdb
+C:\Users\gabri\Documents\Unoeste\LP1Repository\AtividadePratica1\AtividadePratica1\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\gabri\Documents\Unoeste\LP1Repository\AtividadePratica1\AtividadePratica1\bin\Debug\net6.0\appsettings.json
+C:\Users\gabri\Documents\Unoeste\LP1Repository\AtividadePratica1\AtividadePratica1\bin\Debug\net6.0\AtividadePratica1.exe
+C:\Users\gabri\Documents\Unoeste\LP1Repository\AtividadePratica1\AtividadePratica1\bin\Debug\net6.0\AtividadePratica1.deps.json
+C:\Users\gabri\Documents\Unoeste\LP1Repository\AtividadePratica1\AtividadePratica1\bin\Debug\net6.0\AtividadePratica1.runtimeconfig.json
+C:\Users\gabri\Documents\Unoeste\LP1Repository\AtividadePratica1\AtividadePratica1\bin\Debug\net6.0\AtividadePratica1.dll
+C:\Users\gabri\Documents\Unoeste\LP1Repository\AtividadePratica1\AtividadePratica1\bin\Debug\net6.0\AtividadePratica1.pdb
+C:\Users\gabri\Documents\Unoeste\LP1Repository\AtividadePratica1\AtividadePratica1\obj\Debug\net6.0\staticwebassets\msbuild.AtividadePratica1.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\gabri\Documents\Unoeste\LP1Repository\AtividadePratica1\AtividadePratica1\obj\Debug\net6.0\staticwebassets\msbuild.build.AtividadePratica1.props
+C:\Users\gabri\Documents\Unoeste\LP1Repository\AtividadePratica1\AtividadePratica1\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.AtividadePratica1.props
+C:\Users\gabri\Documents\Unoeste\LP1Repository\AtividadePratica1\AtividadePratica1\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.AtividadePratica1.props
+C:\Users\gabri\Documents\Unoeste\LP1Repository\AtividadePratica1\AtividadePratica1\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\gabri\Documents\Unoeste\LP1Repository\AtividadePratica1\AtividadePratica1\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\gabri\Documents\Unoeste\LP1Repository\AtividadePratica1\AtividadePratica1\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\gabri\Documents\Unoeste\LP1Repository\AtividadePratica1\AtividadePratica1\obj\Debug\net6.0\scopedcss\bundle\AtividadePratica1.styles.css
+C:\Users\gabri\Documents\Unoeste\LP1Repository\AtividadePratica1\AtividadePratica1\obj\Debug\net6.0\AtividadePratica1.genruntimeconfig.cache
+C:\Users\gabri\Documents\Unoeste\LP1Repository\AtividadePratica1\AtividadePratica1\obj\Debug\net6.0\ref\AtividadePratica1.dll

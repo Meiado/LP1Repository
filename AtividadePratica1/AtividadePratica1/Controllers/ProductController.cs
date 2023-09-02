@@ -29,15 +29,17 @@ namespace AtividadePratica1.Controllers
         public IActionResult Get(Guid id)
         {
             List<ProductGetViewModel> products = GetProducts();
-            var product = JsonSerializer.Serialize(products.Where(p => p.Id == id).FirstOrDefault());
-            if(!product)
+            var product = products.Where(p => p.Id == id).FirstOrDefault();
+            if (product == null)
                 return NotFound(
                     new
                     {
                         Message = $"Produto {id} não encontrado"
                     }
-                );
-            return Content(product, "application/json");
+                );    
+            var productJson = JsonSerializer.Serialize(product);
+            return Content(productJson, "application/json"); 
+            
         }
 
         [HttpGet]
@@ -59,16 +61,17 @@ namespace AtividadePratica1.Controllers
         {
             List<ProductGetViewModel> products = GetProducts();
 
-            var product = JsonSerializer.Serialize(products.Where(p => p.Name == name).FirstOrDefault());
+            var product = products.Where(p => p.Name == name).FirstOrDefault();
 
-            if(!product)
+            if(product == null)
                 return NotFound(
                     new
                     {
                         Message = $"Produto {name} não encontrado"
                     }
                 );
-            return Content(product, "application/json");
+            var productJson = JsonSerializer.Serialize(product);
+            return Content(productJson, "application/json");
         }
 
         [HttpPost]
@@ -85,6 +88,42 @@ namespace AtividadePratica1.Controllers
 
             return CreatedAtAction(nameof(Get), product);
         }
+
+        [HttpPost]
+        [Route("[action]/{id}/upload-image")]
+        public async Task<IActionResult> UploadImage(Guid id, IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+            {
+                return BadRequest("O arquivo não foi fornecido ou está vazio.");
+            }
+
+            if (file.Length > 1 * 1024 * 1024) // 1 MB
+            {
+                return BadRequest("O tamanho do arquivo excede 1 MB.");
+            }
+
+            string uploadsFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "uploads");
+            string extension = Path.GetExtension(file.FileName);
+            string fileName = $"{id}{extension}";
+
+            if (!Directory.Exists(uploadsFolder))
+            {
+                Directory.CreateDirectory(uploadsFolder);
+            }
+
+            string filePath = Path.Combine(uploadsFolder, fileName);
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }
+
+            // Agora você pode salvar o caminho do arquivo no objeto do produto ou onde preferir
+
+            return Ok(new { Message = "Imagem enviada com sucesso." });
+        }
+
 
         [HttpPut]
         [Route("[action]/{id}")]
