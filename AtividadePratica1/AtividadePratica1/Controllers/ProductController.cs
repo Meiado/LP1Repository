@@ -1,12 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http;
 using System.Text.Json;
-using System.IO;
 using AtividadePratica1.ViewModels;
 
 namespace AtividadePratica1.Controllers
 {
-    //Falta upload e download de imagem
 
     [Route("api/[controller]")]
     [ApiController]
@@ -61,22 +58,27 @@ namespace AtividadePratica1.Controllers
         {
             List<ProductGetViewModel> products = GetProducts();
 
-            var product = products.Where(p => p.Name == name).FirstOrDefault();
+            List<ProductGetViewModel> productsWithName = new();
+            
+            foreach (var product in products)
+                if(product.Name.ToLower().Contains(name.ToLower()))
+                    productsWithName.Add(product);
+            
 
-            if(product == null)
+            if(productsWithName == null)
                 return NotFound(
                     new
                     {
                         Message = $"Produto {name} não encontrado"
                     }
                 );
-            var productJson = JsonSerializer.Serialize(product);
+            var productJson = JsonSerializer.Serialize(productsWithName);
             return Content(productJson, "application/json");
         }
 
         [HttpPost]
         [Route("[action]")]
-        public IActionResult Post(ViewModels.ProductGetViewModel data)
+        public IActionResult Post(ProductGetViewModel data)
         {
             List<ProductGetViewModel> products = GetProducts();
 
@@ -90,38 +92,70 @@ namespace AtividadePratica1.Controllers
         }
 
         [HttpPost]
-        [Route("[action]/{id}/upload-image")]
-        public async Task<IActionResult> UploadImage(Guid id, IFormFile file)
+        [Route("[action]/{id}")]
+        public IActionResult UploadImage(Guid id)
         {
-            if (file == null || file.Length == 0)
+            if (Request.Form.Files.Count > 0) 
             {
-                return BadRequest("O arquivo não foi fornecido ou está vazio.");
-            }
+                using (var ms = new MemoryStream())
+                {
+                    Request.Form.Files[0].CopyTo(ms);
+                    string name = Request.Form.Files[0].FileName;
+                    string type = Request.Form.Files[0].ContentType;
+                    var file = ms.ToArray();
 
-            if (file.Length > 1 * 1024 * 1024) // 1 MB
-            {
-                return BadRequest("O tamanho do arquivo excede 1 MB.");
-            }
+                    if (file.Length > 1 * 1024 * 1024) // 1 MB
+                    {
+                        return BadRequest("O tamanho do arquivo excede 1 MB.");
+                    }
 
+                    string extension = Path.GetExtension(name);
+
+                    if (extension != ".png")
+                    {
+                        return BadRequest("O formato do arquivo é inválido.");
+                    }
+
+                    string uploadsFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "uploads");
+                    
+                    string fileName = $"{id}{extension}";
+
+                    if (!Directory.Exists(uploadsFolder))
+                    {
+                        Directory.CreateDirectory(uploadsFolder);
+                    }
+
+                    string filePath = Path.Combine(uploadsFolder, fileName);
+
+                    System.IO.File.WriteAllBytes(filePath, file);
+                    
+                    return Ok(new { Message = "Imagem enviada com sucesso." });
+                }
+            }
+            return BadRequest("O arquivo não foi fornecido ou está vazio.");
+        }
+
+        [HttpGet]
+        [Route("[action]/{id}")]
+        public IActionResult DownloadImage(Guid id)
+        {
             string uploadsFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "uploads");
-            string extension = Path.GetExtension(file.FileName);
-            string fileName = $"{id}{extension}";
-
-            if (!Directory.Exists(uploadsFolder))
-            {
-                Directory.CreateDirectory(uploadsFolder);
-            }
+            string fileName = $"{id}.png";
 
             string filePath = Path.Combine(uploadsFolder, fileName);
 
-            using (var stream = new FileStream(filePath, FileMode.Create))
+            if (!System.IO.File.Exists(filePath))
             {
-                await file.CopyToAsync(stream);
+                return NotFound("Imagem não encontrada.");
             }
+            
+            var imageBytes = System.IO.File.ReadAllBytes(filePath);
+            
+            Response.Headers["Content-Disposition"] = $"attachment; filename=\"{fileName}\"";
+            
+            Response.ContentType = "image/png";
 
-            // Agora você pode salvar o caminho do arquivo no objeto do produto ou onde preferir
-
-            return Ok(new { Message = "Imagem enviada com sucesso." });
+            return File(imageBytes, "image/png");
         }
 
 
@@ -146,7 +180,7 @@ namespace AtividadePratica1.Controllers
             return NotFound(
                 new
                 {
-                    Message = $"Produto {id} não encontrado"
+                    Message = $"Produto {id} não encontrado."
                 }
             );
         }
@@ -161,12 +195,17 @@ namespace AtividadePratica1.Controllers
             {
                 productToUpdate.StockQuantity -= amount;
                 WriteProducts(products);
-                return Content(JsonSerializer.Serialize(productToUpdate), "application/json");
+                return Ok( 
+                    new 
+                    {
+                        Product = productToUpdate, 
+                        Message = "Compra realizada" 
+                    }
+                );
             }
             if(productToUpdate.StockQuantity - amount < 0)
             {
-                var msg = new { Message = "Product not available at desired amount." };
-                return Content(JsonSerializer.Serialize(msg), "application/json");
+                return BadRequest("Quantidade indisponível para compra");
             }
             return NotFound(
                 new
@@ -214,7 +253,7 @@ namespace AtividadePratica1.Controllers
                 };
 
                 var productsJson = System.IO.File.ReadAllText(productsPath);
-                List<ProductGetViewModel> products = System.Text.Json.JsonSerializer.Deserialize<List<ProductGetViewModel>>(productsJson, options);
+                List<ProductGetViewModel> products = JsonSerializer.Deserialize<List<ProductGetViewModel>>(productsJson, options);
                 return products;
             }
             return null;
